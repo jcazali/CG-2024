@@ -175,7 +175,7 @@ while rodando:
             #Volta ao centro da tela
             bola_x = largura // 2 - tamanho_bola // 2 
             bola_y =  altura // 2 - tamanho_bola // 2 
-            #Inverte a direção para qual irá ao iniciar novamente o jogo, pro lado oposto de quem marcou ponto
+            #Inverte a direção para qual irá ao iniciar novamente o jogo, pro lado de quem marcou ponto
             velocidade_bola_x = -velocidade_bola_x  
             #Adiciona 1 ponto ao score do player 1
             score_player_1 += 1
@@ -191,7 +191,7 @@ while rodando:
             #Volta ao centro da tela
             bola_x = largura // 2 - tamanho_bola // 2 
             bola_y =  altura // 2 - tamanho_bola // 2
-            #Inverte a direção para qual irá ao iniciar novamente o jogo, pro lado oposto de quem marcou ponto
+            #Inverte a direção para qual irá ao iniciar novamente o jogo, pro lado de quem marcou ponto
             velocidade_bola_x = -velocidade_bola_x  
             #Adiciona 1 ponto ao score do pc
             score_pc += 1
@@ -201,17 +201,6 @@ while rodando:
                 print("PC venceu!")
                 vencedor = "PC"
                 fim_jogo()
-
-        #Se a bola bater do lado direito da tela
-        if bola_x >= largura - tamanho_bola:
-            #Volta ao centro da tela
-            bola_x = largura // 2 - tamanho_bola // 2 
-            bola_y =  altura // 2 - tamanho_bola // 2
-            #Inverte a direção para qual irá ao iniciar novamente o jogo, pro lado oposto de quem marcou ponto
-            velocidade_bola_x = -velocidade_bola_x  
-            #Adiciona 1 ponto ao score do pc
-            score_pc += 1
-            print(f"Score PC: {score_pc}")
 
         #Move a raquete do pc para seguir a bola
         if pc_y + raquete_altura // 2 < bola_y:
@@ -226,12 +215,6 @@ while rodando:
             player_1_y -= raquete_player_1_dy'''
 
         #Evita que a raquete do pc saia fora da tela
-        if pc_y < 0:
-            pc_y = 0
-        elif pc_y > altura - raquete_altura:
-            pc_y = altura - raquete_altura
-
-        #Evita que a raquete do player saia fora da tela
         if pc_y < 0:
             pc_y = 0
         elif pc_y > altura - raquete_altura:
